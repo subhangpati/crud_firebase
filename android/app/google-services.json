@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "852176165273",
+    "firebase_url": "https://crudsubhang.firebaseio.com",
+    "project_id": "crudsubhang",
+    "storage_bucket": "crudsubhang.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:852176165273:android:8b6aa6544f391847539b08",
+        "android_client_info": {
+          "package_name": "com.subh.crud_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "852176165273-2h4h0822cb5akpp5itlkipimnp08rnoh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkzVpcMBIaDbdlrqKzfcblPPowMKVq4as"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "852176165273-2h4h0822cb5akpp5itlkipimnp08rnoh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
