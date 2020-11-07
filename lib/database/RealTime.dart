@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'user.dart';
+import 'package:crud_firebase/practise.dart';
 
 class FireBaseFireStoreDemo extends StatefulWidget {
   FireBaseFireStoreDemo() : super();
@@ -205,6 +206,12 @@ class FireBaseFireStoreDemoState extends State<FireBaseFireStoreDemo> {
               });
             },
           ),
+          IconButton(icon: Icon(Icons.calendar_today_rounded), onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => AddEvent()),
+            );
+          })
         ],
       ),
       body: Container(
