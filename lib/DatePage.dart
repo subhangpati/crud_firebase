@@ -2,6 +2,7 @@ import 'package:crud_firebase/database/calendarHelper.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'add_enents.dart';
+import 'add_events_page.dart';
 import 'database/EventsOnOrders.dart';
 import 'database/calendarHelper.dart';
 
@@ -61,7 +62,7 @@ class _datePickerState extends State<datePicker> {
               children: <Widget>[
                 TableCalendar(
                   events: events,
-                  initialCalendarFormat: CalendarFormat.week,
+                  initialCalendarFormat: CalendarFormat.twoWeeks,
                   calendarController: calendarController,
                   startingDayOfWeek: StartingDayOfWeek.monday,
                   calendarStyle: CalendarStyle(

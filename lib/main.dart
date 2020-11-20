@@ -1,5 +1,4 @@
 import 'package:crud_firebase/database/RealTime.dart';
-import 'package:crud_firebase/practise.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
