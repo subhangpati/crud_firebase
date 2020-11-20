@@ -2,10 +2,8 @@ import 'package:crud_firebase/database/calendarHelper.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'add_enents.dart';
-import 'add_events_page.dart';
 import 'database/EventsOnOrders.dart';
 import 'database/calendarHelper.dart';
-
 
 class datePicker extends StatefulWidget {
   @override
@@ -19,6 +17,8 @@ class _datePickerState extends State<datePicker> {
   List<dynamic> _selectedEvents;
   DateTime eventDate;
   Duration duration;
+  
+
 
 
   @override
@@ -27,14 +27,13 @@ class _datePickerState extends State<datePicker> {
     calendarController = CalendarController();
     events = {};
     _selectedEvents = [];
-    eventDate = DateTime.now();
   }
 
   Map<DateTime, List<dynamic>> _groupEvents(List<EventModel> allEvents) {
     Map<DateTime, List<dynamic>> data = {};
     allEvents.forEach((event) {
       DateTime date = DateTime(
-          event.eventDate.year, event.eventDate.month, event.eventDate.day, 12);
+          event.eventDate.year, event.eventDate.month, event.eventDate.day , 12);
       if (data[date] == null) data[date] = [];
       data[date].add(event);
     });
@@ -101,7 +100,7 @@ class _datePickerState extends State<datePicker> {
                         )),
                   ),
                 ),..._selectedEvents.map((events) => ListTile(
-                  title: Text('booked remaining is to be added')
+                  title: Text('From $duration is booked ')
                 ))
               ],
             ),

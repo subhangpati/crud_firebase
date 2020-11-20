@@ -1,4 +1,5 @@
 import 'package:firebase_helpers/firebase_helpers.dart';
+import 'package:intl/intl.dart';
 
 class EventModel extends DatabaseItem{
   final String id;
@@ -13,7 +14,7 @@ class EventModel extends DatabaseItem{
     return EventModel(
       title: data['title'],
       description: data['description'],
-      eventDate: data['event_date'],
+      eventDate: DateFormat('dd/MM/yyyy', 'en_US').parse(data['event_date']),
         selectedTime : data['selected_time']
     );
   }
@@ -23,7 +24,7 @@ class EventModel extends DatabaseItem{
       id: id,
       title: data['title'],
       description: data['description'],
-      eventDate: data['event_date'].toDate(),
+      eventDate:  DateFormat('dd/MM/yyyy', 'en_US').parse(data['event_date']),
         selectedTime: data['selected_time']
     );
   }
@@ -32,7 +33,7 @@ class EventModel extends DatabaseItem{
     return {
       "title":title,
       "description": description,
-      "event_date":eventDate,
+      "event_date": DateFormat('dd/MM/yyyy', 'en_US').parse('event_date'),
       "id":id,
       "selected_time": selectedTime
     };

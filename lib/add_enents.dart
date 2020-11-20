@@ -100,7 +100,6 @@ class _AddEventPageState extends State<AddEventPage> {
                                 }
                                 else{
                                   final data = {
-                                    // "title": _title.text,
                                     'selected_time': this._time,
                                     "event_date": _eventDate,
                                   };
