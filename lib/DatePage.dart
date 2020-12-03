@@ -5,6 +5,16 @@ import 'add_enents.dart';
 import 'database/EventsOnOrders.dart';
 import 'database/calendarHelper.dart';
 
+
+// Example holidays for experiments :
+final Map<DateTime, List> _holidays = {
+  DateTime(2020, 1, 1): ['New Year\'s Day'],
+  DateTime(2020, 1, 6): ['Epiphany'],
+  DateTime(2020, 2, 14): ['Valentine\'s Day'],
+  DateTime(2020, 4, 21): ['Easter Sunday'],
+  DateTime(2020, 4, 22): ['Easter Monday'],
+};
+
 class datePicker extends StatefulWidget {
   @override
   _datePickerState createState() => _datePickerState();
@@ -43,6 +53,9 @@ class _datePickerState extends State<datePicker> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('  CALENDAR !!!'),
+      ),
        body: StreamBuilder<List<EventModel>>(
         stream: eventDBS.streamList(),
         builder: (context, snapshot) {
@@ -61,6 +74,7 @@ class _datePickerState extends State<datePicker> {
               children: <Widget>[
                 TableCalendar(
                   events: events,
+                  holidays: _holidays ,
                   initialCalendarFormat: CalendarFormat.twoWeeks,
                   calendarController: calendarController,
                   startingDayOfWeek: StartingDayOfWeek.monday,
@@ -71,7 +85,7 @@ class _datePickerState extends State<datePicker> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  onDaySelected:  (DateTime date, events , _){
+                  onDaySelected:  (DateTime date, events , _holidays){
                     setState(() {
                       print('$date');
                       _selectedEvents = events;
@@ -99,8 +113,8 @@ class _datePickerState extends State<datePicker> {
                           style: TextStyle(color: Colors.white),
                         )),
                   ),
-                ),..._selectedEvents.map((events) => ListTile(
-                  title: Text('From $duration is booked ')
+                ),..._selectedEvents.map((event) => ListTile(
+                  title: Text(' From ${event.selectedTime} is booked. ')
                 ))
               ],
             ),

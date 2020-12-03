@@ -25,7 +25,7 @@ class FireBaseFireStoreDemoState extends State<FireBaseFireStoreDemo> {
 
 
   getUsers() {
-    return FirebaseFirestore.instance.collection(collectionName).snapshots();
+    return FirebaseFirestore.instance.collection('Users').snapshots();
   }
 
   addUser() {
@@ -147,7 +147,7 @@ class FireBaseFireStoreDemoState extends State<FireBaseFireStoreDemo> {
                                Text(user.price, style : TextStyle( color: Colors.black , fontSize: 20)),
                              ],
                            ),
-                       IconButton(
+                           IconButton(
                              icon: Icon(Icons.delete),
                              onPressed: () {
                                delete(user);
